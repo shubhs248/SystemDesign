@@ -5,9 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-![Anatomy of a typical web system](docs/03-web-system-anatomy.png)
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/03-web-system-anatomy-dark.png"><img alt="Anatomy of a typical web system" src="docs/03-web-system-anatomy.png"></picture>
 
-> 🖼️ Every diagram in this lab is also available as **downloadable PNG/SVG** in the [diagram gallery](docs/README.md) — handy for slides and LinkedIn.
+> 🖼️ Every diagram in this lab is also available as **downloadable PNG/SVG** (light + dark) in the [diagram gallery](docs/README.md) — handy for slides and LinkedIn.
 
 ---
 
