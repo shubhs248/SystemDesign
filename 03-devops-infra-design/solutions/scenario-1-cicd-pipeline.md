@@ -11,11 +11,11 @@
 flowchart LR
     dev([Commit / PR]) --> ci
     subgraph ci[CI - on every PR]
-      lint[Lint] --> build[Build] --> test[Unit + integration tests] --> scan[SAST + image + dependency scan] --> img[Build & push image\nto registry]
+      lint[Lint] --> build[Build] --> test[Unit + integration tests] --> scan[SAST + image + dependency scan] --> img[Build and push image<br/>to registry]
     end
     img --> cd
     subgraph cd[CD - on merge to main]
-      dep_dev[Deploy to dev] --> dep_stg[Deploy to staging\n+ smoke/e2e] --> gate{Approval / gate} --> dep_prod[Deploy to prod\nprogressive]
+      dep_dev[Deploy to dev] --> dep_stg[Deploy to staging<br/>+ smoke/e2e] --> gate{Approval / gate} --> dep_prod[Deploy to prod<br/>progressive]
     end
     dep_prod --> mon[Monitor + auto-rollback]
 ```

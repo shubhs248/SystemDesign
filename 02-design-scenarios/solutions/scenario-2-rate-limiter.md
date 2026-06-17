@@ -31,8 +31,8 @@ Counters must be **shared across all app/gateway servers** → keep them in a fa
 ```mermaid
 flowchart LR
     c([Client]) --> gw[API Gateway / LB]
-    gw --> rl{Rate Limiter\nmiddleware}
-    rl -->|check & update counter| redis[(Redis)]
+    gw --> rl{Rate Limiter<br/>middleware}
+    rl -->|check and update counter| redis[(Redis)]
     rl -->|allowed| svc[Backend service]
     rl -->|exceeded| x[429 + Retry-After]
 ```

@@ -15,6 +15,17 @@ Give you a **repeatable method** so you never freeze on a blank whiteboard. The 
 
 ## 🪜 The 7 steps
 
+```mermaid
+flowchart TB
+    s1[1. Clarify requirements<br/>functional + non-functional] --> s2[2. Estimate scale<br/>QPS, storage, bandwidth]
+    s2 --> s3[3. API + data model]
+    s3 --> s4[4. High-level design<br/>boxes and arrows]
+    s4 --> s5[5. Deep dive<br/>the hardest part]
+    s5 --> s6[6. Scale and harden<br/>bottlenecks + failure modes]
+    s6 --> s7[7. Wrap up<br/>recap trade-offs]
+```
+
+
 ### 1. Clarify requirements (≈5 min) — *don't skip this*
 Split into two kinds:
 

@@ -1,0 +1,13 @@
+flowchart LR
+    u([User]) --> lb[Load Balancer]
+    lb --> svc[URL Service]
+    svc --> cache[(Redis cache)]
+    svc --> db[(Key-Value DB)]
+    svc -. async .-> q[[Analytics queue]]
+    q --> an[(Analytics store)]
+
+    class u client
+    class lb edge
+    class svc app
+    class cache,db,an data
+    class q queue

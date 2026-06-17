@@ -5,6 +5,25 @@ Understand the components you'll combine in every design — and, more important
 
 > Read this once for understanding. In a real interview you won't explain each block in depth — you'll *use* them and justify your choices.
 
+## 🗺️ Anatomy of a typical web system
+Most designs are a rearrangement of these pieces. Keep this mental picture handy:
+
+```mermaid
+flowchart TB
+    user([Users]) --> dns[DNS]
+    dns --> cdn[CDN<br/>static assets]
+    dns --> lb[Load Balancer]
+    lb --> app1[App server]
+    lb --> app2[App server]
+    app1 --> cache[(Cache)]
+    app2 --> cache
+    app1 --> db[(Primary DB)]
+    db --> replica[(Read replicas)]
+    app1 --> queue[[Message queue]]
+    queue --> worker[Async workers]
+    app1 --> obj[(Object storage)]
+```
+
 ---
 
 ## ⚖️ The two ideas everything hangs on

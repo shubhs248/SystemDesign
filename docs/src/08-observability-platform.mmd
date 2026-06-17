@@ -1,0 +1,21 @@
+flowchart LR
+    subgraph svc[Services / Hosts]
+      a[App + OpenTelemetry SDK]
+      ag[Agent / collector]
+    end
+    a --> ag
+    ag --> buf[[Buffer / Kafka]]
+    buf --> mstore[(Metrics TSDB)]
+    buf --> lstore[(Log store)]
+    buf --> tstore[(Trace store)]
+    mstore --> q[Query + Dashboards<br/>Grafana]
+    lstore --> q
+    tstore --> q
+    mstore --> al[Alerting<br/>Alertmanager] --> note[PagerDuty / Slack]
+
+    class a app
+    class ag edge
+    class buf queue
+    class mstore,lstore,tstore data
+    class q,al app
+    class note ext

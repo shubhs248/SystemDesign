@@ -16,7 +16,7 @@ flowchart LR
     s2([Service B]) --> api
     api --> q1[[Ingest queue]]
     api --> dedup[(Idempotency store)]
-    q1 --> proc[Processor:\nload prefs + render template]
+    q1 --> proc[Processor:<br/>load prefs + render template]
     prefs[(User prefs DB)] --- proc
     tmpl[(Templates)] --- proc
     proc --> qe[[Email queue]]

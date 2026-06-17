@@ -1,0 +1,19 @@
+flowchart TB
+    user([Users]) --> dns[DNS]
+    dns --> cdn[CDN<br/>static assets]
+    dns --> lb[Load Balancer]
+    lb --> app1[App server]
+    lb --> app2[App server]
+    app1 --> cache[(Cache)]
+    app2 --> cache
+    app1 --> db[(Primary DB)]
+    db --> replica[(Read replicas)]
+    app1 --> queue[[Message queue]]
+    queue --> worker[Async workers]
+    app1 --> obj[(Object storage)]
+
+    class user client
+    class dns,cdn,lb edge
+    class app1,app2,worker app
+    class cache,db,replica,obj data
+    class queue queue

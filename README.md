@@ -5,6 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+![Anatomy of a typical web system](docs/03-web-system-anatomy.png)
+
+> 🖼️ Every diagram in this lab is also available as **downloadable PNG/SVG** in the [diagram gallery](docs/README.md) — handy for slides and LinkedIn.
+
 ---
 
 ## 🎯 Why this repo?
@@ -65,6 +69,15 @@ cat 02-design-scenarios/scenario-1-url-shortener.md
 ```
 
 ## 🧭 Suggested path (about 3 hours, spread it out)
+
+```mermaid
+flowchart LR
+    p0[Part 0<br/>The Framework] --> p1[Part 1<br/>Building Blocks]
+    p1 --> p2[Part 2<br/>Classic Scenarios]
+    p2 --> p3[Part 3<br/>DevOps Infra Design]
+    p3 --> iq[Interview<br/>Questions]
+```
+
 
 | # | Part | What you get | Time |
 |---|------|--------------|------|

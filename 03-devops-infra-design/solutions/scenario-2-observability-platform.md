@@ -27,10 +27,10 @@ flowchart LR
     buf --> mstore[(Metrics TSDB)]
     buf --> lstore[(Log store)]
     buf --> tstore[(Trace store)]
-    mstore --> q[Query + Dashboards\nGrafana]
+    mstore --> q[Query + Dashboards<br/>Grafana]
     lstore --> q
     tstore --> q
-    mstore --> al[Alerting\nAlertmanager] --> note[PagerDuty / Slack]
+    mstore --> al[Alerting<br/>Alertmanager] --> note[PagerDuty / Slack]
 ```
 
 ```

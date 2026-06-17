@@ -1,0 +1,12 @@
+flowchart LR
+    c([Client]) --> gw[API Gateway / LB]
+    gw --> rl{Rate Limiter<br/>middleware}
+    rl -->|check and update counter| redis[(Redis)]
+    rl -->|allowed| svc[Backend service]
+    rl -->|exceeded| x[429 + Retry-After]
+
+    class c client
+    class gw,rl edge
+    class redis data
+    class svc app
+    class x ext

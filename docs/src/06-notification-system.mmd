@@ -1,0 +1,23 @@
+flowchart LR
+    s1([Service A]) --> api[Notification API]
+    s2([Service B]) --> api
+    api --> q1[[Ingest queue]]
+    api --> dedup[(Idempotency store)]
+    q1 --> proc[Processor:<br/>load prefs + render template]
+    prefs[(User prefs DB)] --- proc
+    tmpl[(Templates)] --- proc
+    proc --> qe[[Email queue]]
+    proc --> qs[[SMS queue]]
+    proc --> qp[[Push queue]]
+    qe --> we[Email worker] --> ses[(SES)]
+    qs --> ws[SMS worker] --> tw[(Twilio)]
+    qp --> wp[Push worker] --> fcm[(FCM/APNs)]
+    we --> st[(Delivery status)]
+    ws --> st
+    wp --> st
+
+    class s1,s2 client
+    class api,proc,we,ws,wp app
+    class q1,qe,qs,qp queue
+    class dedup,prefs,tmpl,st data
+    class ses,tw,fcm ext
